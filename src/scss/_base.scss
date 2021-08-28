@@ -1,0 +1,34 @@
+@use "./abstracts.scss" as abs;
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    @media only screen and(max-width:abs.$bp-500){font-size: 50%;}
+}
+
+body{
+    font-family: abs.$font-primary;
+}
+
+.container{
+    padding: 5rem 0;
+    min-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(3rem,1fr) [main-start] minmax(40rem,70rem) [main-end] minmax(3rem,1fr);
+    grid-template-rows: min-content 1fr;
+    background-color: abs.$color-bg;
+    @media only screen and(max-width:abs.$bp-500){
+        grid-template-columns: [main-start] 1fr [main-end];
+        padding:2rem 1rem;
+    }
+    @media only screen and(max-width:abs.$bp-400){padding: 2rem .5rem;}
+    
+}

@@ -1,0 +1,97 @@
+@use "./abstracts" as abs;
+// Currency inputs
+select{
+    padding: 1.5rem 4rem;
+    background-color: abs.$color-secondary;
+    color: abs.$color-bg--light;
+    border: none;
+    border-radius: .5rem;
+    font-size: 2rem;
+    &:focus{
+       outline: none;
+       box-shadow: 0 0 .5rem .25rem abs.$color-primary;
+    }
+    @media only screen and(max-width:abs.$bp-400){padding: 1rem 2.5rem;}
+ }
+ 
+option{
+    background-color: abs.$color-bg;
+    color: abs.$color-primary;
+    font-size: 1.6rem;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+// Money inputs
+#exchanged,#amount{
+  grid-column: 2 / 3;
+  justify-self: end;
+  width: 100%;
+  height: 4rem;
+  background-color: abs.$color-bg;
+  border: none;
+  outline: none;
+  border-radius: .5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: abs.$color-white;
+  &:focus{box-shadow: 0 0 .3rem .1rem abs.$color-primary;}
+}
+
+#exchanged{
+  color: abs.$color-primary;
+  pointer-events:none;
+}
+
+// Implicit components
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  svg {
+    height: 6rem;
+    width: 6rem;
+    fill: abs.$color-primary;
+    animation: abs.$rotate .8s infinite linear;
+  }
+}
+
+.error-box{
+  //Display props from parent
+  grid-column: main-start / main-end;
+  grid-row: 2 / 3;
+  width: 90%;
+  min-height: 30%;
+  align-self: center;
+  justify-self: center;
+  //Display props itself
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  //Style props
+  background-color: abs.$color-bg--light;
+  color: abs.$color-secondary;
+  border-radius: 1rem;
+  font-size: 2rem;
+  //Child elements style
+  &--error{
+    fill: abs.$color-error;
+    width: 5rem;
+    height: 5rem;
+  }
+  &--close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    fill: abs.$color-bg;
+    cursor:pointer;
+    transition: all .25s ease-in-out;
+    &:hover{fill: abs.$color-primary; transform: scale(1.1)}
+  }
+}
