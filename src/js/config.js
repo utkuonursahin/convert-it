@@ -1,12 +1,11 @@
-export const API_URL_CURRENT = 'https://api.currencyscoop.com/v1/convert?api_key='
-export const API_URL_HISTORICAL = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/`
+export const SERVERLESS_URL = 'https://excurrency.netlify.app/.netlify/functions'
 export const DAY_TIMESTAMP = 1000 * 60 * 60 * 24
 export const CHART_CONFIG_OPTIONS = { //Fixed options
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
         legend: {
-            labels: { color: "hsl(0, 0%, 97%)" }
+            labels: { color: "hsl(0, 0%, 97%)"}
         }
     },
     scales: {

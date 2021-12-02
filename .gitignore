@@ -4,4 +4,4 @@ dist
 .idea
 .babelrc
 .htmlnanorc
-src/js/apiID.js
+.env
