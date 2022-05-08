@@ -1,7 +1,6 @@
 'use strict'
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-import {Chart} from "chart.js/auto";
 import * as model from './model'
 import View from "./view";
 

@@ -42,10 +42,10 @@ class View {
         this._clear(this._form)
         this._form.insertAdjacentHTML("afterbegin", markup)
 
-        //Render chart
-        if (this._canvasUsed) this._chart.destroy();
-        this._chart = new Chart(this._ctx, this._data.chartOptions)
-        this._canvasUsed = true
+        //Render chart **DEPRECATED TEMPORARILY**
+        // if (this._canvasUsed) this._chart.destroy();
+        // this._chart = new Chart(this._ctx, this._data.chartOptions)
+        // this._canvasUsed = true
     }
     renderSpinner() {
         const markup = `
