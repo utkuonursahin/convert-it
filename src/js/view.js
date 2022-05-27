@@ -1,4 +1,5 @@
-import { Chart } from "chart.js";
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 import icons from "../img/sprite.svg"
 
 class View {
@@ -43,9 +44,10 @@ class View {
         this._form.insertAdjacentHTML("afterbegin", markup)
 
         //Render chart **DEPRECATED TEMPORARILY**
-        // if (this._canvasUsed) this._chart.destroy();
-        // this._chart = new Chart(this._ctx, this._data.chartOptions)
-        // this._canvasUsed = true
+        if (this._canvasUsed) this._chart.destroy();
+        console.log(this._data.chartOptions)
+        this._chart = new Chart(this._ctx, this._data.chartOptions)
+        this._canvasUsed = true
     }
     renderSpinner() {
         const markup = `

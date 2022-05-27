@@ -1,4 +1,4 @@
-import {API_KEY, API_URL_CURRENT, API_URL_HISTORICAL, CHART_CONFIG_OPTIONS, SERVERLESS_URL} from "./config";
+import {CHART_CONFIG_OPTIONS, SERVERLESS_URL} from "./config";
 import { dateFormatter, getJSON } from "./helpers";
 export const state = {
     currencyFrom: null,
