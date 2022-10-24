@@ -1,12 +1,20 @@
 import nc from 'next-connect';
-
+import currencyList from '../../src/data/currencies.json'
 const handler = nc()
-  // express like routing for methods
-  .get((req, res) => {
-    res.send('Hello world')
+  .get(async (req, res) => {
+    res.status(200).json({
+      status:'success',
+      currencyList
+    });
   })
-  .post((req, res) => {
-    res.json({ hello: 'posted' })
+  .post(async (req, res) => {
+    const {from,to,amount} = req.body;
+    const response = await fetch(`https://api.currencyscoop.com/v1/convert?api_key=${process.env.API_KEY}&from=${from}&amount=${amount}&to=${to}`);
+    const data = await response.json();
+    res.status(200).json({
+      status:'success',
+      data
+    });
   })
 
 export default handler;

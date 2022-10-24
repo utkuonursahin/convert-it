@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import Converter from "../src/components/Converter/Converter";
+import {CurrencyProvider} from "../src/context/CurrencyContext";
 
-export default function Home() {
+export default function Home({currencyList}) {
   return (
-    <div className="container h-screen py-12 bg-gray-900 flex flex-col gap-4 justify-between">
+    <div className="overflow-y-scroll h-screen py-12 bg-gray-900 flex flex-col gap-4 justify-between">
       <main className="flex flex-col gap-8 items-center ">
         <Head>
-          <title>exCurrency</title>
+          <title>eXcurrency</title>
           <meta name="description" content="Currency exchange platform" />
           <link rel="icon" href="/favicon.ico"/>
         </Head>
@@ -18,7 +19,9 @@ export default function Home() {
           <h2 className="text-lg font-bold">"no more Googling, no more calculator"</h2>
         </section>
         <section className="converter-box bg-gray-800 px-14 py-16 rounded">
-          <Converter/>
+          <CurrencyProvider>
+            <Converter currencyList={currencyList}/>
+          </CurrencyProvider>
         </section>
       </main>
       <footer className="text-gray-50">
@@ -26,4 +29,14 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:3000/api');
+  const data = await res.json();
+  return {
+    props: {
+      currencyList: data.currencyList
+    }
+  }
 }
