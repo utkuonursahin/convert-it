@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Converter from "../src/components/Converter/Converter";
-import {CurrencyProvider} from "../src/context/CurrencyContext";
+import {InputProvider} from "../src/context/InputContext";
+import {OutputProvider} from "../src/context/OutputContext";
 
 export default function Home({currencyList}) {
   return (
@@ -19,13 +20,15 @@ export default function Home({currencyList}) {
           <h2 className="text-lg font-bold">"no more Googling, no more calculator"</h2>
         </section>
         <section className="converter-box bg-gray-800 px-14 py-16 rounded">
-          <CurrencyProvider>
-            <Converter currencyList={currencyList}/>
-          </CurrencyProvider>
+          <InputProvider>
+            <OutputProvider>
+              <Converter currencyList={currencyList}/>
+            </OutputProvider>
+          </InputProvider>
         </section>
       </main>
-      <footer className="text-gray-50">
-        Footer
+      <footer className="text-gray-50 flex justify-center align-center">
+        eXcurrency &copy; 2022
       </footer>
     </div>
   )
