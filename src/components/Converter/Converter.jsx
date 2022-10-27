@@ -1,9 +1,10 @@
 import InputBox from "./InputBox/InputBox";
 import SelectBox from "./SelectBox/SelectBox";
 import Button from "./Button/Button";
+import Information from "./Information/Information";
 const Converter = ({currencyList}) => {
   return (
-    <form action="#" className="flex flex-col items-center gap-8">
+    <form action="#" className=" flex flex-col items-center gap-8">
       <div className="w-full flex justify-between items-center">
         <SelectBox fromBox currencyList={currencyList}/>
         <span className="text-neutral-100">to</span>
@@ -13,7 +14,7 @@ const Converter = ({currencyList}) => {
         <InputBox text="Amount"/>
         <InputBox text="Exchanged" disabled/>
       </div>
-      <span className="text-center text-neutral-100 text-base">Select currencies, then hit the button!</span>
+      <Information/>
       <Button/>
     </form>
   );
