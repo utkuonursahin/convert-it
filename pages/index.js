@@ -3,7 +3,6 @@ import Converter from "../src/components/Converter/Converter";
 import {InputProvider} from "../src/context/InputContext";
 import {OutputProvider} from "../src/context/OutputContext";
 import Graph from "../src/components/Graph/Graph";
-import currencyList from "../src/data/currencies.json";
 export default function Home({currencyList}) {
   return (
     <div className="overflow-y-scroll overflow-x-hidden h-screen py-4 sm:py-12 bg-gray-900 flex flex-col gap-4 justify-between">
@@ -35,9 +34,11 @@ export default function Home({currencyList}) {
 }
 
 export async function getStaticProps() {
+  const res = await fetch(`${process.env.NEXT_SERVER_API_URL}/api`);
+  const data = await res.json();
   return {
     props: {
-      currencyList
+      currencyList: data.currencyList
     }
   }
 }
