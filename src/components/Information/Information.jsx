@@ -1,5 +1,5 @@
-import {useOutput} from "../../../context/OutputContext";
-import {useInput} from "../../../context/InputContext";
+import {useOutput} from "../../context/OutputContext";
+import {useInput} from "../../context/InputContext";
 const Information = () => {
   const {from,to} = useInput()
   const {exchangeRate} = useOutput()

@@ -1,8 +1,6 @@
-import InputBox from "./InputBox/InputBox";
+import TextInput from "./TextInput/TextInput";
 import SelectBox from "./SelectBox/SelectBox";
-import Button from "./Button/Button";
-import Information from "./Information/Information";
-const Converter = ({currencyList}) => {
+const InputContainer = ({currencyList}) => {
   return (
     <form action="#" className=" flex flex-col items-center gap-8">
       <div className="w-full flex justify-between items-center">
@@ -11,15 +9,13 @@ const Converter = ({currencyList}) => {
         <SelectBox currencyList={currencyList}/>
       </div>
       <div className="flex flex-col align-center gap-6">
-        <InputBox text="Amount"/>
-        <InputBox text="Exchanged" disabled/>
+        <TextInput text="Amount"/>
+        <TextInput text="Exchanged" disabled/>
       </div>
-      <Information/>
-      <Button/>
     </form>
   );
 };
 
-export default Converter;
+export default InputContainer;
 
 

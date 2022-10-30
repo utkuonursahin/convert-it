@@ -1,6 +1,6 @@
 import {useInput} from "../../../context/InputContext";
 import {useOutput} from "../../../context/OutputContext";
-const InputBox = ({text,disabled}) => {
+const TextInput = ({text,disabled}) => {
   const {setAmount}= useInput()
   const {exchangedAmount} = useOutput();
   return (
@@ -13,4 +13,4 @@ const InputBox = ({text,disabled}) => {
   );
 };
 
-export default InputBox;
+export default TextInput;

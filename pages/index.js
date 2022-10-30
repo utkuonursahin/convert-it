@@ -1,8 +1,11 @@
 import Head from 'next/head'
-import Converter from "../src/components/Converter/Converter";
+import InputContainer from "../src/components/InputContainer/InputContainer";
 import {InputProvider} from "../src/context/InputContext";
 import {OutputProvider} from "../src/context/OutputContext";
 import Graph from "../src/components/Graph/Graph";
+import Button from "../src/components/Button/Button";
+import Information from "../src/components/Information/Information";
+import {LoadingProvider} from "../src/context/LoadingContext";
 export default function Home({currencyList}) {
   return (
     <div className="overflow-y-scroll overflow-x-hidden h-screen py-4 sm:py-12 bg-gray-900 flex flex-col gap-4 justify-between">
@@ -22,7 +25,11 @@ export default function Home({currencyList}) {
         <section className="h-full flex flex-col gap-6 bg-gray-800 px-6 py-8 sm:px-14 sm:py-16 sm:rounded">
           <InputProvider>
             <OutputProvider>
-              <Converter currencyList={currencyList}/>
+              <InputContainer currencyList={currencyList}/>
+              <Information/>
+              <LoadingProvider>
+                <Button/>
+              </LoadingProvider>
               <Graph/>
             </OutputProvider>
           </InputProvider>
