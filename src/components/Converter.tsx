@@ -6,6 +6,7 @@ import ConversionInput, {
 } from "@/components/ConversionInput";
 import {ArrowLeftRight} from "lucide-react";
 import {Label} from "@/components/ui/label";
+import ConvertButton from "@/components/ConvertButton";
 
 const Converter = () => {
     return (
@@ -28,10 +29,11 @@ const Converter = () => {
                 </ConversionInput>
                 <ConversionInput>
                     <ConversionInputConvertedAmount>
-                        <Label>Converted Amount:</Label>
+                        <Label className="text-primary">Converted Amount:</Label>
                     </ConversionInputConvertedAmount>
                 </ConversionInput>
             </div>
+            <ConvertButton/>
         </section>
     );
 };

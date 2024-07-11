@@ -14,7 +14,7 @@ export default function Home() {
           />
           <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
               <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                  Currencier <br/> is your converter.
+                  Currencier<br/> is your converter.
               </h1>
               <WordFadeIn words="With Currencier, you can convert any currency to another within seconds. No more Googling and calculator for currency conversions." className="!text-base text-center font-normal max-w-lg mx-auto mt-4 text-neutral-50"/>
           </div>

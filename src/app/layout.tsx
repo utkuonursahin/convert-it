@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import {Noto_Sans_Display} from "next/font/google";
 import "./globals.css";
 import {ThemeProvider} from "@/components/ThemeProvider";
+import {Provider} from "jotai";
+import {Toaster} from "@/components/ui/sonner";
 
 const notoSansDisplay = Noto_Sans_Display({ subsets: ["latin"] });
 
@@ -16,10 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{scrollBehavior:'smooth'}}>
       <body className={notoSansDisplay.className}>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
+          <Provider>
+            {children}
+            <Toaster richColors/>
+          </Provider>
         </ThemeProvider>
       </body>
     </html>
