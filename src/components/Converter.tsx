@@ -22,7 +22,7 @@ const Converter = () => {
                     <CurrencySelectTo/>
                 </CurrencySelect>
             </div>
-            <div className="col-start-2 w-full flex justify-between">
+            <div className="col-start-2 w-full flex justify-between gap-20">
                 <ConversionInput>
                     <ConversionInputAmount>
                         <Label>Amount:</Label>

@@ -10,7 +10,7 @@ type ConversionInputProps = {
 
 const ConversionInput = ({children} : ConversionInputProps) => {
     return (
-        <div className="flex flex-col gap-2">
+        <div className="w-full flex flex-col gap-2">
             {children}
         </div>
     );
