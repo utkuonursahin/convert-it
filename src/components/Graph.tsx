@@ -3,12 +3,11 @@ import { useAtom } from 'jotai';
 import React from 'react';
 import {currencyConversionAtom} from "@/lib/atoms";
 import {ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent} from "@/components/ui/chart";
-import {Bar, BarChart, CartesianGrid, Line, LineChart, XAxis} from "recharts";
+import {CartesianGrid, Line, LineChart, XAxis} from "recharts";
 
 const Graph = () => {
     const [currencyAtom,setCurrencyAtom] = useAtom(currencyConversionAtom)
     const chartData = currencyAtom.historicalData
-    console.log(chartData)
     const chartConfig = {
         price: {
             label: 'Price',
