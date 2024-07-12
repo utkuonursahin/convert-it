@@ -3,7 +3,7 @@ import { useAtom } from 'jotai';
 import React from 'react';
 import {currencyConversionAtom} from "@/lib/atoms";
 import {ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent} from "@/components/ui/chart";
-import {CartesianGrid, Line, LineChart, XAxis} from "recharts";
+import {CartesianGrid, Line, LineChart, XAxis, YAxis} from "recharts";
 
 const Graph = () => {
     const [currencyAtom,setCurrencyAtom] = useAtom(currencyConversionAtom)
@@ -21,25 +21,27 @@ const Graph = () => {
                     accessibilityLayer
                     data={chartData}
                     margin={{
-                        left: 12,
-                        right: 12,
+                        left: 5,
+                        right: 5,
+                        top: 5,
+                        bottom: 5
                     }}
                 >
                     <CartesianGrid vertical={false} />
                     <XAxis
                         dataKey="date"
                         axisLine={false}
-                        tickMargin={8}
                         tickFormatter={(value) => value.slice(2, 10)}
                         angle={20}
                     />
+                    <YAxis domain={['dataMin', 'dataMax']} hide={true}/>
                     <ChartTooltip
                         cursor={false}
                         content={<ChartTooltipContent hideLabel />}
                     />
                     <Line
                         dataKey="price"
-                        type="basis"
+                        type="natural"
                         stroke="var(--color-price)"
                         strokeWidth={2}
                         dot={false}

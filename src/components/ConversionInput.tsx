@@ -33,7 +33,7 @@ export function ConversionInputConvertedAmount ({children} : ConversionInputProp
     return(
         <>
             {children}
-            <Input value={currencies.convertedAmount} onChange={e => setCurrencies(prev => (
+            <Input readOnly value={currencies.convertedAmount} onChange={e => setCurrencies(prev => (
                 {...prev, convertedAmount:parseFloat(e.target.value)}
             ))} type="number" placeholder="Amount"/>
         </>
