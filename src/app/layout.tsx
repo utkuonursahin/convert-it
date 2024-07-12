@@ -8,7 +8,7 @@ import {Toaster} from "@/components/ui/sonner";
 const notoSansDisplay = Noto_Sans_Display({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Currencier",
+  title: "ConvertIt",
   description: "No more Googling for currency conversions.",
 };
 
