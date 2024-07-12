@@ -7,11 +7,12 @@ import ConversionInput, {
 import {ArrowLeftRight} from "lucide-react";
 import {Label} from "@/components/ui/label";
 import ConvertButton from "@/components/ConvertButton";
+import Graph from "@/components/Graph";
 
 const Converter = () => {
     return (
         <section id="converter"
-                 className="ring-2 ring-primary/75 w-1/2 grid grid-cols-[4rem,1fr,4rem] gap-8 p-10 rounded-lg">
+                 className="ring-2 ring-primary/75 w-1/2 grid grid-cols-[4rem,1fr,4rem] gap-8 py-20 px-4 rounded-lg">
             <div className="col-start-2 flex items-center gap-8 ">
                 <CurrencySelect>
                     <CurrencySelectFrom/>
@@ -34,6 +35,7 @@ const Converter = () => {
                 </ConversionInput>
             </div>
             <ConvertButton/>
+            <Graph/>
         </section>
     );
 };

@@ -2,7 +2,7 @@
 import React from 'react';
 import {Input} from "@/components/ui/input";
 import {useAtom} from "jotai";
-import {currencyAtom} from "@/lib/atoms";
+import {currencyConversionAtom} from "@/lib/atoms";
 
 type ConversionInputProps = {
     children: React.ReactNode
@@ -17,7 +17,7 @@ const ConversionInput = ({children} : ConversionInputProps) => {
 };
 
 export function ConversionInputAmount ({children} : ConversionInputProps){
-    const [currencies,setCurrencies] = useAtom(currencyAtom)
+    const [currencies,setCurrencies] = useAtom(currencyConversionAtom)
     return(
         <>
             {children}
@@ -29,7 +29,7 @@ export function ConversionInputAmount ({children} : ConversionInputProps){
 }
 
 export function ConversionInputConvertedAmount ({children} : ConversionInputProps){
-    const [currencies,setCurrencies] = useAtom(currencyAtom)
+    const [currencies,setCurrencies] = useAtom(currencyConversionAtom)
     return(
         <>
             {children}

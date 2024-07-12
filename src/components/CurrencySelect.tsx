@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select"
 
 import currencies from "../constants/currencies.json";
-import {currencyAtom} from "@/lib/atoms";
+import {currencyConversionAtom} from "@/lib/atoms";
 import {useAtom} from "jotai";
 
 type CurrencySelectProps = {
@@ -48,7 +48,7 @@ function CurrencySelectList(){
 }
 
 export function CurrencySelectFrom () {
-    const [currencySelection, setCurrencySelection] = useAtom(currencyAtom)
+    const [currencySelection, setCurrencySelection] = useAtom(currencyConversionAtom)
     return (
         <Select defaultValue={currencySelection.from} onValueChange={val => setCurrencySelection(prev => ({...prev, from: val}))}>
             <SelectTrigger>
@@ -60,7 +60,7 @@ export function CurrencySelectFrom () {
 }
 
 export function CurrencySelectTo () {
-    const [currencySelection, setCurrencySelection] = useAtom(currencyAtom)
+    const [currencySelection, setCurrencySelection] = useAtom(currencyConversionAtom)
     return (
         <Select defaultValue={currencySelection.to} onValueChange={val => setCurrencySelection(prev => ({...prev, to: val}))}>
             <SelectTrigger>

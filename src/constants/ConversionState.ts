@@ -3,4 +3,5 @@ export type ConversionState = {
     to: string;
     amount: number;
     convertedAmount: number;
+    historicalData: {date: string, price: number}[]
 }

@@ -3,6 +3,7 @@ import WordFadeIn from "@/components/magicui/word-fade-in";
 import FeatureCard from "@/components/FeatureCard";
 import {Button} from "@/components/ui/button";
 import Converter from "@/components/Converter";
+import Graph from "@/components/Graph";
 
 export default function Home() {
   return (
@@ -20,8 +21,8 @@ export default function Home() {
           </div>
           <FeatureCard.Container>
               <FeatureCard title={'Currencies'} count={168}/>
-              <FeatureCard title={'Last months\' data'} count={12}/>
-              <FeatureCard title={'Avg response ms'} count={650}/>
+              <FeatureCard title={'Last days\' data'} count={7}/>
+              <FeatureCard title={'Request traffic daily'} count={1000}/>
           </FeatureCard.Container>
           <Button className="rounded-lg text-primary-foreground w-52 h-10">
               <a href="#converter">Get Started</a>
