@@ -20,12 +20,6 @@ const Graph = () => {
                 <LineChart
                     accessibilityLayer
                     data={chartData}
-                    margin={{
-                        left: 5,
-                        right: 5,
-                        top: 5,
-                        bottom: 5
-                    }}
                 >
                     <CartesianGrid vertical={false} />
                     <XAxis
@@ -41,7 +35,7 @@ const Graph = () => {
                     />
                     <Line
                         dataKey="price"
-                        type="natural"
+                        type="monotone"
                         stroke="var(--color-price)"
                         strokeWidth={2}
                         dot={false}

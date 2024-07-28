@@ -22,7 +22,7 @@ const ConvertButton = () => {
         setCurrencyAtom(prev => ({...prev, historicalData: Object.entries(historicalData.response).map(([key, value]) => ({'date': key, 'price': value[currencyAtom.to]}))}))
     }
     return (
-        <Button onClick={handleClick}  className="col-start-2">
+        <Button onClick={handleClick}  className="w-full col-start-2">
             Convert
         </Button>
     );

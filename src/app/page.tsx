@@ -4,6 +4,7 @@ import FeatureCard from "@/components/FeatureCard";
 import {Button} from "@/components/ui/button";
 import Converter from "@/components/Converter";
 import {Heart} from "lucide-react";
+import Graph from "@/components/Graph";
 
 export default function Home() {
   return (
@@ -30,7 +31,10 @@ export default function Home() {
               <Button className="rounded-lg text-primary-foreground w-52 h-10">
                   <a href="#converter">Get Started</a>
               </Button>
-              <Converter/>
+              <div className="ring-2 ring-primary/75 grid grid-cols-[4rem,1fr,4rem] gap-8 py-12 px-4 w-1/2 rounded-lg">
+                  <Converter/>
+                  <Graph/>
+              </div>
           </main>
           <footer
               className="w-full flex justify-center items-center p-1 bg-primary">
