@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ab5aa08-4b9e-44f1-b7df-e92ac9525ce1" name="Changes" comment="feat: convert currency selection to combobox">
-      <change afterPath="$PROJECT_DIR$/src/components/ui/command.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/dialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/popover.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/Currency.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ConvertButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConvertButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Converter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Converter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrencySelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencySelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/ConversionState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/ConversionState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/atoms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/atoms.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +23,23 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "utkuonursahin"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;utkuonursahin&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/utkuonursahin/convert-it.git",
-    "accountId": "7676f114-aab8-4d98-94f6-670c0eb1abbc"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/utkuonursahin/convert-it.git&quot;,
+    &quot;accountId&quot;: &quot;7676f114-aab8-4d98-94f6-670c0eb1abbc&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -60,20 +50,20 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/Users/utkuonursahin/Personal/Projects/Next.js Projects/convert-it",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/utkuonursahin/Personal/Projects/Next.js Projects/convert-it/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/utkuonursahin/Personal/Projects/Next.js Projects/convert-it&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/utkuonursahin/Personal/Projects/Next.js Projects/convert-it/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -98,7 +88,19 @@
       <workItem from="1722169013133" duration="1089000" />
       <workItem from="1722615232553" duration="7000" />
       <workItem from="1725436910781" duration="3095000" />
+      <workItem from="1725440023550" duration="17000" />
+      <workItem from="1725440204559" duration="19000" />
+      <workItem from="1725440922341" duration="884000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: convert currency selection to combobox">
+      <option name="closed" value="true" />
+      <created>1725440033188</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725440033188</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
