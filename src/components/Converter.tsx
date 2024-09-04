@@ -1,5 +1,5 @@
 import React from 'react';
-import CurrencySelect, {CurrencySelectFrom, CurrencySelectTo} from "@/components/CurrencySelect";
+import CurrencySelect, {CurrencyComboBox} from "@/components/CurrencySelect";
 import ConversionInput, {
     ConversionInputAmount,
     ConversionInputConvertedAmount,
@@ -14,11 +14,11 @@ const Converter = () => {
                  className="col-start-2 flex flex-col gap-8 items-center">
             <div className="col-start-2 w-full flex items-center gap-8 ">
                 <CurrencySelect>
-                    <CurrencySelectFrom/>
+                    <CurrencyComboBox from={true}/>
                 </CurrencySelect>
                 <ArrowLeftRight color="#fff" size={48}/>
                 <CurrencySelect>
-                    <CurrencySelectTo/>
+                    <CurrencyComboBox from={false}/>
                 </CurrencySelect>
             </div>
             <div className="col-start-2 w-full flex justify-between gap-20">

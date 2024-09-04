@@ -14,6 +14,12 @@ import {
 import currencies from "../constants/currencies.json";
 import {currencyConversionAtom} from "@/lib/atoms";
 import {useAtom} from "jotai";
+import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
+import {Button} from "@/components/ui/button";
+import {Check, ChevronsUpDown} from "lucide-react";
+import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList} from "@/components/ui/command";
+import {cn} from "@/lib/utils";
+import {useState} from "react";
 
 type CurrencySelectProps = {
     children: React.ReactNode
@@ -27,47 +33,52 @@ const CurrencySelect = ({children} : CurrencySelectProps) => {
     )
 };
 
-function CurrencySelectList(){
-    return (
-        <SelectContent>
-            <SelectGroup>
-                <SelectLabel>Currencies</SelectLabel>
-                {currencies.map((currency) => {
-                    return (
-                        <SelectItem key={currency.code} value={currency.code}>
-                            <p className="flex items-center gap-1">
-                                <span>{currency.name}</span>
-                                <span>({currency.symbol})</span>
-                            </p>
-                        </SelectItem>
-                    );
-                })}
-            </SelectGroup>
-        </SelectContent>
-    )
+type CurrencyComboBoxProps = {
+    from?: boolean
 }
 
-export function CurrencySelectFrom () {
+export function CurrencyComboBox ({from}: CurrencyComboBoxProps) {
     const [currencySelection, setCurrencySelection] = useAtom(currencyConversionAtom)
-    return (
-        <Select defaultValue={currencySelection.from} onValueChange={val => setCurrencySelection(prev => ({...prev, from: val}))}>
-            <SelectTrigger>
-                <SelectValue/>
-            </SelectTrigger>
-            <CurrencySelectList />
-        </Select>
-    );
-}
+    const [open, setOpen] = useState(false)
 
-export function CurrencySelectTo () {
-    const [currencySelection, setCurrencySelection] = useAtom(currencyConversionAtom)
+    const selection = from ? currencySelection.from : currencySelection.to
+    const selectionType = from ? "from" : "to"
     return (
-        <Select defaultValue={currencySelection.to} onValueChange={val => setCurrencySelection(prev => ({...prev, to: val}))}>
-            <SelectTrigger>
-                <SelectValue/>
-            </SelectTrigger>
-            <CurrencySelectList />
-        </Select>
+        <Popover open={open} onOpenChange={setOpen}>
+            <PopoverTrigger asChild>
+                <Button
+                    variant="outline"
+                    role="combobox"
+                    aria-expanded={open}
+                    className="w-full"
+                >
+                    {selection.name + " (" + selection.symbol + ")"}
+                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+                <Command>
+                    <CommandInput placeholder="Search currency..." />
+                    <CommandList>
+                        <CommandEmpty>No currency found.</CommandEmpty>
+                        <CommandGroup>
+                            {currencies.map((currency) => (
+                                <CommandItem
+                                    key={currency.code}
+                                    value={currency.code}
+                                    onSelect={() => {
+                                        setCurrencySelection(prev => ({...prev, [selectionType]: currency}))
+                                        setOpen(false)
+                                    }}
+                                >
+                                    {currency.name} ({currency.symbol})
+                                </CommandItem>
+                            ))}
+                        </CommandGroup>
+                    </CommandList>
+                </Command>
+            </PopoverContent>
+        </Popover>
     );
 }
 
